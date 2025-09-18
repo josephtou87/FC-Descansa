@@ -6,6 +6,7 @@ import Countdown from './components/Countdown'
 import PlayerCard from './components/PlayerCard'
 import RegisterForm from './components/RegisterForm'
 import LoginForm from './components/LoginForm'
+import { createRoot } from 'react-dom/client';
 
 export default function App() {
   const [logoUrl] = useState('/logo-fc-descansda.png')
