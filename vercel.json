@@ -1,5 +1,11 @@
 {
-  "functions": {
-    "functions/*.js": { "runtime": "nodejs18.x" }
-  }
+  "version": 2,
+  "builds": [
+    {"src":"package.json","use":"@vercel/static-build","config":{"distDir":"dist"}},
+    {"src":"functions/*.js","use":"@vercel/node","config":{"runtime":"nodejs18.x"}}
+  ],
+  "routes":[
+    {"src":"/api/(.*)","dest":"functions/index.js"},
+    {"src":"/(.*)","dest":"/index.html"}
+  ]
 }
